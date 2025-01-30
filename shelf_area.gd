@@ -1,10 +1,13 @@
-extends Area2D
+extends DropZone
 
+var marker_status: Dictionary = {}
+@onready var content = $Content
+@onready var markers = $Markers
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	for marker in markers.get_children():
+		if marker is Marker2D:
+			marker_status[marker] = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

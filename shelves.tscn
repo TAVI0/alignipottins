@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://dwstqvxwobpfc"]
+[gd_scene load_steps=3 format=3 uid="uid://dwstqvxwobpfc"]
 
-[node name="Shelves" type="Node2D"]
+[ext_resource type="Script" path="res://shelf_area.gd" id="1_3tr3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30da4"]
+size = Vector2(138, 140)
+
+[node name="Shelf" type="Node2D"]
+
+[node name="shelfArea" type="Area2D" parent="."]
+script = ExtResource("1_3tr3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelfArea"]
+shape = SubResource("RectangleShape2D_30da4")
+
+[node name="markers" type="Node2D" parent="shelfArea"]
+
+[node name="Marker2D" type="Marker2D" parent="shelfArea/markers"]
+position = Vector2(-61, 0)
+scale = Vector2(4, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="shelfArea/markers"]
+scale = Vector2(4, 4)
+
+[node name="Marker2D3" type="Marker2D" parent="shelfArea/markers"]
+position = Vector2(63, 0)
+scale = Vector2(4, 4)
