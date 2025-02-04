@@ -1,6 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwstqvxwobpfc"]
 
-[ext_resource type="Script" path="res://shelf_area.gd" id="1_3tr3m"]
+[sub_resource type="GDScript" id="GDScript_7dboy"]
+script/source = "extends DropZone
+
+var marker_status: Dictionary = {}
+@onready var content = $Content
+@onready var markers = $Markers
+
+func _ready() -> void:
+	for marker in markers.get_children():
+		if marker is Marker2D:
+			marker_status[marker] = null
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30da4"]
 size = Vector2(138, 140)
@@ -8,7 +23,7 @@ size = Vector2(138, 140)
 [node name="Shelf" type="Node2D"]
 
 [node name="shelfArea" type="Area2D" parent="."]
-script = ExtResource("1_3tr3m")
+script = SubResource("GDScript_7dboy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelfArea"]
 shape = SubResource("RectangleShape2D_30da4")

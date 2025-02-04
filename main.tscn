@@ -1,11 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4boffmx620kv"]
+[gd_scene load_steps=5 format=3 uid="uid://c4boffmx620kv"]
 
+[ext_resource type="Texture2D" uid="uid://ciryt76f5xjy0" path="res://shelf.png" id="1_aomma"]
 [ext_resource type="PackedScene" uid="uid://bs5dswkn0sv0m" path="res://draggable.tscn" id="1_g2yej"]
+[ext_resource type="Script" path="res://shelves.gd" id="2_qku1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve4tk"]
+size = Vector2(153.147, 40.8125)
 
 [node name="Main" type="Node2D"]
 
-[node name="Draggable" parent="." instance=ExtResource("1_g2yej")]
-position = Vector2(430, 291)
+[node name="shelf" type="Node2D" parent="."]
+position = Vector2(244, 230)
+scale = Vector2(2.43557, 2.17599)
 
-[node name="Draggable2" parent="." instance=ExtResource("1_g2yej")]
-position = Vector2(681, 296)
+[node name="Shelf" type="Sprite2D" parent="shelf"]
+position = Vector2(4.92698, 60.2025)
+scale = Vector2(0.410582, 0.46656)
+texture = ExtResource("1_aomma")
+
+[node name="Shelves" type="Area2D" parent="shelf"]
+position = Vector2(9.85397, 0.459561)
+script = ExtResource("2_qku1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves"]
+position = Vector2(-7.80106, -13.3273)
+shape = SubResource("RectangleShape2D_ve4tk")
+
+[node name="Content" type="Node2D" parent="shelf/Shelves"]
+position = Vector2(-8.21165, -12.4081)
+
+[node name="Markers" type="Node2D" parent="shelf/Shelves"]
+position = Vector2(-1.64233, -2.29781)
+
+[node name="Marker2D" type="Marker2D" parent="shelf/Shelves/Markers"]
+position = Vector2(-60.7662, -12.4081)
+
+[node name="Marker2D2" type="Marker2D" parent="shelf/Shelves/Markers"]
+position = Vector2(-6.56932, -11.489)
+
+[node name="Marker2D3" type="Marker2D" parent="shelf/Shelves/Markers"]
+position = Vector2(42.29, -10.5699)
+
+[node name="Potion" type="Node2D" parent="."]
+
+[node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(1033, 476)
+
+[node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(1035, 322)
