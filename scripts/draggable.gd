@@ -8,8 +8,7 @@ var initial_scale := Vector2.ZERO
 var is_dragging = false
 var texture: Texture
 
-signal dropped
-signal successfully_dropped(draggable: Draggable, area: Area2D)
+signal dropped(draggable: Draggable, area: Area2D)
 
 @onready var sprite = $Sprite
 @onready var collision_shape = $CollisionShape
@@ -22,14 +21,13 @@ func _ready() -> void:
 		sprite.texture = texture
 	initial_position = position
 	initial_scale = scale
-	#self.connect("dropped", _on_draggable_dropped)
+	self.connect("dropped", _on_successfully_dropped)
 	play_spawn_animation()
 
-#func _on_draggable_dropped(draggable: Draggable, overlapping_areas: Array[Area2D]):
-#	if overlapping_areas:
-#		draggable.disconnect("dropped", _on_draggable_dropped)
-#		successfully_dropped.emit(draggable,overlapping_areas[0])
-
+func _on_successfully_dropped(decoration: Draggable, area: Area2D):
+	if area is DropZone:
+		area.add_decoration(decoration)
+		
 func _process(delta: float) -> void:
 	if is_dragging:
 		global_position = lerp(
@@ -46,10 +44,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and is_dragging:
 		is_dragging = false
 		var overlapping_areas = get_overlapping_areas()
-		#dropped.emit(self, overlapping_areas)
-		successfully_dropped.emit(self,overlapping_areas[0])
-
-		if not overlapping_areas:
+		if overlapping_areas:
+			dropped.emit(self,overlapping_areas[0])
+		else:
 			#self_destruct()
 			#ToDo que vuelva a la ubicacion inicial
 			pass
