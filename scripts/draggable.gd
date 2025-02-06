@@ -9,6 +9,7 @@ var is_dragging = false
 var texture: Texture
 
 signal dropped
+signal successfully_dropped(draggable: Draggable, area: Area2D)
 
 @onready var sprite = $Sprite
 @onready var collision_shape = $CollisionShape
@@ -16,13 +17,18 @@ signal dropped
 @export_category("Type Settings")
 @export_flags_2d_physics var decoration_collisions = 2
 
-
 func _ready() -> void:
 	if texture:
 		sprite.texture = texture
 	initial_position = position
 	initial_scale = scale
+	#self.connect("dropped", _on_draggable_dropped)
 	play_spawn_animation()
+
+#func _on_draggable_dropped(draggable: Draggable, overlapping_areas: Array[Area2D]):
+#	if overlapping_areas:
+#		draggable.disconnect("dropped", _on_draggable_dropped)
+#		successfully_dropped.emit(draggable,overlapping_areas[0])
 
 func _process(delta: float) -> void:
 	if is_dragging:
@@ -31,8 +37,6 @@ func _process(delta: float) -> void:
 			get_global_mouse_position(),
 			delta * DRAGGIN_SPEED
 		)
-	
-
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
@@ -42,10 +46,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and is_dragging:
 		is_dragging = false
 		var overlapping_areas = get_overlapping_areas()
-		print(overlapping_areas)
-		dropped.emit(self, overlapping_areas)
+		#dropped.emit(self, overlapping_areas)
+		successfully_dropped.emit(self,overlapping_areas[0])
+
 		if not overlapping_areas:
 			#self_destruct()
+			#ToDo que vuelva a la ubicacion inicial
 			pass
 	pass
 
