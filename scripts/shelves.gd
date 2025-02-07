@@ -1,14 +1,32 @@
 extends DropZone
 
+var groupList = []
+var LONGSET = 3
 @onready var content = $Content
 @onready var markers = $Markers
-
 var marker_status: Dictionary = {}
 
 func _ready() -> void:
 	for marker in markers.get_children():
 		if marker is Marker2D:
 			marker_status[marker] = null
+
+func addToGroupList(group):
+	groupList.append(group)
+	print(group)
+	print(groupList)
+	checkSet()
+
+func checkSet():
+	if groupList.size() == LONGSET and groupList.count(groupList[0]) == groupList.size():
+		completeSet()
+
+func completeSet():
+	print("llego")
+	for pot in content.get_children():
+		pot.queue_free()
+	groupList.clear()
+	print(groupList)
 
 func add_decoration(decoration: Draggable):
 	decoration.reparent(content)
@@ -18,6 +36,7 @@ func add_decoration(decoration: Draggable):
 			find_a_place(_dragged)
 	)
 	find_a_place(decoration)
+	await addToGroupList(decoration.group)
 
 func find_a_place(decoration):
 	var closest_marker = get_closest_marker(decoration)

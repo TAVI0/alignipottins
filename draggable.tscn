@@ -15,4 +15,11 @@ texture = ExtResource("2_25jmc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_frk8c")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -37.0
+offset_top = 67.0
+offset_right = 36.0
+offset_bottom = 90.0
+text = "group: 01"
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]

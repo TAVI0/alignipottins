@@ -10,6 +10,7 @@ var texture: Texture
 
 signal dropped(draggable: Draggable, area: Area2D)
 
+@export var group = 0
 @onready var sprite = $Sprite
 @onready var collision_shape = $CollisionShape
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	initial_position = position
 	initial_scale = scale
 	self.connect("dropped", _on_successfully_dropped)
+	$Label.set_text("group: "+ str(group))
 	play_spawn_animation()
 
 func _on_successfully_dropped(decoration: Draggable, area: Area2D):

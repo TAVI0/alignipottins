@@ -50,15 +50,24 @@ scale = Vector2(0.745008, 0.745008)
 
 [node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(10.1288, 401.67)
+group = 1
 
 [node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(-213.871, 255.67)
+group = 1
 
 [node name="Draggable3" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(-208.871, 111.67)
+group = 1
 
 [node name="Draggable4" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(0.128784, 249.67)
+group = 2
 
 [node name="Draggable5" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(2.12878, 108.67)
+group = 2
+
+[node name="Draggable6" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(-212.078, 417.445)
+group = 2
