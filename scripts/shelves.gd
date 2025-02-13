@@ -22,7 +22,6 @@ func checkSet():
 		completeSet()
 
 func completeSet():
-	print("llego")
 	for pot in content.get_children():
 		pot.queue_free()
 	groupList.clear()
@@ -39,18 +38,22 @@ func add_decoration(decoration: Draggable):
 	await addToGroupList(decoration.group)
 
 func find_a_place(decoration):
+	var content_marker = null
 	var closest_marker = get_closest_marker(decoration)
 	if marker_status[closest_marker] != null:
 		var occupant = marker_status[closest_marker]
 		var empty_marker = find_empty_marker()
 		print(empty_marker)
-		if empty_marker:
+		if empty_marker:			
 			move_to_marker(occupant, empty_marker)
-		elif occupant is Draggable:
-			occupant.self_destruct()
-		else:
-			print("que haces aca mostro")
+		#elif occupant is Draggable:
+			#occupant.self_destruct()
+		#else:
+			#print("que haces aca mostro")
 	move_to_marker(decoration, closest_marker)
+	content_marker=closest_marker.get_child(0)
+	print(content_marker)
+	decoration.reparent(content_marker)
 	
 func find_empty_marker() -> Marker2D:
 	for marker in marker_status.keys():

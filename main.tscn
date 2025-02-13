@@ -38,11 +38,20 @@ position = Vector2(-2.28882e-05, 3.8147e-06)
 [node name="Marker2D" type="Marker2D" parent="shelf/Shelves/Markers"]
 position = Vector2(-54.0507, -0.569911)
 
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D"]
+position = Vector2(54.1968, 0.459567)
+
 [node name="Marker2D2" type="Marker2D" parent="shelf/Shelves/Markers"]
 position = Vector2(-3.43472e-05, 2.14577e-06)
 
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D2"]
+position = Vector2(-2.14577e-06, 3.15905e-06)
+
 [node name="Marker2D3" type="Marker2D" parent="shelf/Shelves/Markers"]
 position = Vector2(49.0055, 0.808725)
+
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D3"]
+position = Vector2(-48.8592, -0.459561)
 
 [node name="Potion" type="Node2D" parent="."]
 position = Vector2(850, 34)
