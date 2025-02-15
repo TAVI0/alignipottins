@@ -13,7 +13,6 @@ func _ready() -> void:
 
 func addToGroupList(group):
 	groupList.append(group)
-	print(group)
 	print(groupList)
 	checkSet()
 
@@ -35,31 +34,14 @@ func add_decoration(decoration: Draggable):
 			find_a_place(_dragged)
 	)
 	find_a_place(decoration)
-	await addToGroupList(decoration.group)
+	addToGroupList(decoration.group)
 
 func find_a_place(decoration):
-	var content_marker = null
-	var closest_marker = get_closest_marker(decoration)
-	if marker_status[closest_marker] != null:
-		var occupant = marker_status[closest_marker]
-		var empty_marker = find_empty_marker()
-		print(empty_marker)
-		if empty_marker:			
-			move_to_marker(occupant, empty_marker)
-		#elif occupant is Draggable:
-			#occupant.self_destruct()
-		#else:
-			#print("que haces aca mostro")
-	move_to_marker(decoration, closest_marker)
-	content_marker=closest_marker.get_child(0)
-	print(content_marker)
-	decoration.reparent(content_marker)
-	
-func find_empty_marker() -> Marker2D:
-	for marker in marker_status.keys():
-		if marker_status[marker] == null:
-			return marker
-	return null
+	var empty_marker = get_empty_marker()
+	if empty_marker != null:
+		move_to_marker(decoration, empty_marker)
+		var content_marker=empty_marker.get_child(0)
+		decoration.reparent(content_marker)
 
 func move_to_marker(node: Node2D, marker: Marker2D):
 	get_tree().create_tween().tween_property(
@@ -70,20 +52,13 @@ func move_to_marker(node: Node2D, marker: Marker2D):
 	).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
 	marker_status[marker] = node
 
-
-func get_closest_marker(decoration: Draggable) -> Marker2D:
-	var closest_marker: Marker2D = null
-	var min_distince = 100000.0
-	for marker in marker_status.keys():
-		var distance = decoration.position.distance_to(marker.position)
-		if distance < min_distince:
-			min_distince = distance
-			closest_marker = marker
-	
-	return closest_marker
-
 func reset_marker_status(decoration: Draggable):
 	for marker in marker_status.keys():
 		if marker_status[marker] == decoration:
 			marker_status[marker] = null
 			break
+
+func get_empty_marker():
+	for marker in markers.get_children():
+		if marker.get_child(0).get_child(0)==null:
+			return marker

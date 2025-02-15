@@ -22,7 +22,8 @@ scale = Vector2(0.410582, 0.46656)
 texture = ExtResource("1_aomma")
 
 [node name="Shelves" type="Area2D" parent="shelf"]
-position = Vector2(-1.23176, 56.0664)
+position = Vector2(0.410579, 60.662)
+scale = Vector2(0.910721, 0.968849)
 script = ExtResource("2_qku1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves"]
@@ -33,25 +34,25 @@ shape = SubResource("RectangleShape2D_ve4tk")
 position = Vector2(-2.14577e-06, 3.15905e-06)
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves"]
-position = Vector2(-2.28882e-05, 3.8147e-06)
+position = Vector2(4.76837e-07, 8.04663e-06)
 
 [node name="Marker2D" type="Marker2D" parent="shelf/Shelves/Markers"]
-position = Vector2(-54.0507, -0.569911)
+position = Vector2(49.1537, -0.0792703)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D"]
-position = Vector2(54.1968, 0.459567)
+position = Vector2(-49.249, 2.98023e-07)
 
 [node name="Marker2D2" type="Marker2D" parent="shelf/Shelves/Markers"]
-position = Vector2(-3.43472e-05, 2.14577e-06)
+position = Vector2(-0.0952981, -0.0792691)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D2"]
 position = Vector2(-2.14577e-06, 3.15905e-06)
 
 [node name="Marker2D3" type="Marker2D" parent="shelf/Shelves/Markers"]
-position = Vector2(49.0055, 0.808725)
+position = Vector2(-48.5563, -0.079271)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D3"]
-position = Vector2(-48.8592, -0.459561)
+position = Vector2(48.461, 2.93217e-06)
 
 [node name="Potion" type="Node2D" parent="."]
 position = Vector2(850, 34)
