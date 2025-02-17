@@ -13,7 +13,7 @@ position = Vector2(-45, 67)
 script = ExtResource("1_2l7e7")
 
 [node name="shelf" type="Node2D" parent="."]
-position = Vector2(265, 30)
+position = Vector2(291, -17)
 scale = Vector2(2.43557, 2.17599)
 
 [node name="Shelf" type="Sprite2D" parent="shelf"]
@@ -22,16 +22,13 @@ scale = Vector2(0.410582, 0.46656)
 texture = ExtResource("1_aomma")
 
 [node name="Shelves" type="Area2D" parent="shelf"]
-position = Vector2(0.410579, 60.662)
+position = Vector2(0.821153, 60.662)
 scale = Vector2(0.910721, 0.968849)
 script = ExtResource("2_qku1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves"]
 position = Vector2(-6.67572e-06, -4.76837e-06)
 shape = SubResource("RectangleShape2D_ve4tk")
-
-[node name="Content" type="Node2D" parent="shelf/Shelves"]
-position = Vector2(-2.14577e-06, 3.15905e-06)
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves"]
 position = Vector2(4.76837e-07, 8.04663e-06)
@@ -55,29 +52,29 @@ position = Vector2(-48.5563, -0.079271)
 position = Vector2(48.461, 2.93217e-06)
 
 [node name="Potion" type="Node2D" parent="."]
-position = Vector2(850, 34)
+position = Vector2(718, 209)
 scale = Vector2(0.745008, 0.745008)
 
 [node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(10.1288, 401.67)
+position = Vector2(543.459, 40.6537)
 group = 1
 
 [node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(-213.871, 255.67)
+position = Vector2(319.46, -105.346)
 group = 1
 
 [node name="Draggable3" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(-208.871, 111.67)
+position = Vector2(324.46, -249.346)
 group = 1
 
 [node name="Draggable4" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(0.128784, 249.67)
+position = Vector2(533.459, -111.346)
 group = 2
 
 [node name="Draggable5" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(2.12878, 108.67)
+position = Vector2(535.459, -252.346)
 group = 2
 
 [node name="Draggable6" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(-212.078, 417.445)
+position = Vector2(321.253, 56.4287)
 group = 2
