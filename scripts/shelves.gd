@@ -13,7 +13,13 @@ func addToGroupList(group):
 	checkSet()
 
 func checkSet():
-	if groupList.size() == LONGSET and groupList.count(groupList[0]) == groupList.size():
+	var itemList = []
+	for marker in markers.get_children():
+		var contentMarker = marker.get_child(0)
+		if contentMarker.get_child(0)!=null:
+			itemList.append(contentMarker.get_child(0).group)
+			print(contentMarker.get_child(0).group)
+	if itemList.size() == LONGSET and itemList.count(itemList[0]) == itemList.size():
 		completeSet()
 
 func completeSet():
@@ -26,7 +32,7 @@ func completeSet():
 
 func add_decoration(decoration: Draggable):
 	await find_a_place(decoration)
-	addToGroupList(decoration.group)
+	checkSet()
 
 func find_a_place(decoration):
 	var empty_marker = get_empty_marker()

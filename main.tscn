@@ -51,6 +51,36 @@ position = Vector2(-48.5563, -0.079271)
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D3"]
 position = Vector2(48.461, 2.93217e-06)
 
+[node name="Shelves2" type="Area2D" parent="shelf"]
+position = Vector2(0.821153, 109.835)
+scale = Vector2(0.910721, 0.968849)
+script = ExtResource("2_qku1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves2"]
+position = Vector2(-6.67572e-06, -4.76837e-06)
+shape = SubResource("RectangleShape2D_ve4tk")
+
+[node name="Markers" type="Node2D" parent="shelf/Shelves2"]
+position = Vector2(4.76837e-07, 8.04663e-06)
+
+[node name="Marker2D" type="Marker2D" parent="shelf/Shelves2/Markers"]
+position = Vector2(49.1537, -0.0792703)
+
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D"]
+position = Vector2(-49.249, 2.98023e-07)
+
+[node name="Marker2D2" type="Marker2D" parent="shelf/Shelves2/Markers"]
+position = Vector2(-0.0952981, -0.0792691)
+
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D2"]
+position = Vector2(-2.14577e-06, 3.15905e-06)
+
+[node name="Marker2D3" type="Marker2D" parent="shelf/Shelves2/Markers"]
+position = Vector2(-48.5563, -0.079271)
+
+[node name="ContentMarker" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D3"]
+position = Vector2(48.461, 2.93217e-06)
+
 [node name="Potion" type="Node2D" parent="."]
 position = Vector2(718, 209)
 scale = Vector2(0.745008, 0.745008)
