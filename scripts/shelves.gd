@@ -1,16 +1,13 @@
 extends DropZone
 
-var groupList = []
 var LONGSET = 3
 @onready var markers = $Markers
 
 func _ready() -> void:
 	pass
-
-func addToGroupList(group):
-	groupList.append(group)
-	print(groupList)
-	checkSet()
+	
+func _process(delta: float) -> void:
+	$"../../score/number".set_text(str(GLOBAL.SCORE))
 
 func checkSet():
 	var itemList = []
@@ -23,12 +20,11 @@ func checkSet():
 		completeSet()
 
 func completeSet():
+	add_score()
 	for marker in markers.get_children():
 		var contentMarker = marker.get_child(0)
 		if contentMarker.get_child(0)!=null:
 			contentMarker.get_child(0).queue_free()
-	groupList.clear()
-	print(groupList)
 
 func add_decoration(decoration: Draggable):
 	await find_a_place(decoration)
@@ -50,8 +46,11 @@ func move_to_marker(node: Node2D, marker: Marker2D):
 	).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
 	await tween.finished
 
-
 func get_empty_marker():
 	for marker in markers.get_children():
 		if marker.get_child(0).get_child(0)==null:
 			return marker
+
+func add_score():
+	GLOBAL.SCORE += 100
+	print(GLOBAL.SCORE)

@@ -82,29 +82,45 @@ position = Vector2(-48.5563, -0.079271)
 position = Vector2(48.461, 2.93217e-06)
 
 [node name="Potion" type="Node2D" parent="."]
-position = Vector2(718, 209)
+position = Vector2(578, 254)
 scale = Vector2(0.745008, 0.745008)
 
 [node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(543.459, 40.6537)
+position = Vector2(308.722, 257.715)
 group = 1
 
 [node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(319.46, -105.346)
+position = Vector2(308.722, 90.6248)
 group = 1
 
 [node name="Draggable3" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(324.46, -249.346)
+position = Vector2(310.064, -69.7979)
 group = 1
 
 [node name="Draggable4" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(533.459, -111.346)
+position = Vector2(522.721, 84.6248)
 group = 2
 
 [node name="Draggable5" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(535.459, -252.346)
+position = Vector2(519.458, -79.1938)
 group = 2
 
 [node name="Draggable6" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(321.253, 56.4287)
+position = Vector2(524.827, 256.373)
 group = 2
+
+[node name="score" type="Node" parent="."]
+
+[node name="number" type="Label" parent="score"]
+offset_left = 578.0
+offset_top = 22.0
+offset_right = 634.0
+offset_bottom = 45.0
+text = "00000"
+
+[node name="text" type="Label" parent="score"]
+offset_left = 519.0
+offset_top = 22.0
+offset_right = 575.0
+offset_bottom = 45.0
+text = "SCORE:"
