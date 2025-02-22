@@ -20,7 +20,7 @@ signal dropped(draggable: Draggable, area: Area2D)
 func _ready() -> void:
 	if texture:
 		sprite.texture = texture
-	initial_position = position
+	#initial_position = position
 	initial_scale = scale
 	self.connect("dropped", _on_successfully_dropped)
 	$Label.set_text("group: "+ str(group))
@@ -41,6 +41,13 @@ func _process(delta: float) -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		is_dragging = true
+		initial_position = global_position
+		move_to_front()
+		#set_as_top_level(true)
+		
+	if event.is_action_released("click"):
+		pass
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and is_dragging:
@@ -49,14 +56,22 @@ func _input(event: InputEvent) -> void:
 		if overlapping_areas:
 			dropped.emit(self,overlapping_areas[0])
 		else:
-			#self_destruct()
-			#ToDo que vuelva a la ubicacion inicial
+			return_to_position()
 			pass
 	pass
 
 func self_destruct():
 	await play_self_destruct_animation()
 	queue_free()
+
+func return_to_position():
+	var tween = get_tree().create_tween().tween_property(
+		get_node("."),
+		"global_position",
+		initial_position,
+		0.5
+	).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	await tween.finished
 
 func play_spawn_animation():
 	scale = Vector2.ZERO

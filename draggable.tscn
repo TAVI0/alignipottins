@@ -7,6 +7,8 @@
 size = Vector2(124, 126)
 
 [node name="Draggable" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_fe0qn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
