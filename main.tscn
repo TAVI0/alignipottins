@@ -65,6 +65,8 @@ position = Vector2(-49.249, 2.98023e-07)
 [node name="Shelves2" type="Area2D" parent="shelf"]
 position = Vector2(0.821153, 109.835)
 scale = Vector2(0.910721, 0.968849)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("2_qku1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves2"]
@@ -98,8 +100,6 @@ scale = Vector2(0.745008, 0.745008)
 
 [node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(308.722, 257.715)
-collision_layer = 2
-collision_mask = 4
 group = 1
 
 [node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
@@ -121,6 +121,15 @@ group = 2
 [node name="Draggable6" parent="Potion" instance=ExtResource("1_g2yej")]
 position = Vector2(524.827, 256.373)
 group = 2
+
+[node name="Draggable7" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(119.462, -61.7443)
+
+[node name="Draggable8" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(126.173, 89.9319)
+
+[node name="Draggable9" parent="Potion" instance=ExtResource("1_g2yej")]
+position = Vector2(123.489, 251.004)
 
 [node name="score" type="Node" parent="."]
 

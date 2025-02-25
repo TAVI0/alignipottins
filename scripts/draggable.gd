@@ -18,6 +18,7 @@ signal dropped(draggable: Draggable, area: Area2D)
 @export_flags_2d_physics var decoration_collisions = 2
 
 func _ready() -> void:
+	$AnimatedSprite2D.set_frame_and_progress(group,0)
 	if texture:
 		sprite.texture = texture
 	#initial_position = position

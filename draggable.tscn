@@ -1,27 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs5dswkn0sv0m"]
+[gd_scene load_steps=9 format=3 uid="uid://bs5dswkn0sv0m"]
 
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="1_fe0qn"]
-[ext_resource type="Texture2D" uid="uid://dprkf2had3joe" path="res://sprites/icon.svg" id="2_25jmc"]
+[ext_resource type="Texture2D" uid="uid://dn3swjprawb84" path="res://sprites/ItemsPotionA.png" id="2_jehav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frk8c"]
 size = Vector2(124, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujlis"]
+atlas = ExtResource("2_jehav")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdelw"]
+atlas = ExtResource("2_jehav")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi7qx"]
+atlas = ExtResource("2_jehav")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs8me"]
+atlas = ExtResource("2_jehav")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syd2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujlis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdelw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi7qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs8me")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="Draggable" type="Area2D"]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_fe0qn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_25jmc")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_frk8c")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -37.0
 offset_top = 67.0
 offset_right = 36.0
 offset_bottom = 90.0
 text = "group: 01"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.875, 3.875)
+sprite_frames = SubResource("SpriteFrames_syd2q")
+frame_progress = 0.0894614
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
