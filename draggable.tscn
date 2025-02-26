@@ -1,24 +1,52 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs5dswkn0sv0m"]
+[gd_scene load_steps=16 format=3 uid="uid://bs5dswkn0sv0m"]
 
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="1_fe0qn"]
 [ext_resource type="Texture2D" uid="uid://dn3swjprawb84" path="res://sprites/ItemsPotionA.png" id="2_jehav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frk8c"]
-size = Vector2(124, 126)
+size = Vector2(68, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujlis"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd0qp"]
+atlas = ExtResource("2_jehav")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssy30"]
+atlas = ExtResource("2_jehav")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tpyq"]
 atlas = ExtResource("2_jehav")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xdelw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c81ku"]
+atlas = ExtResource("2_jehav")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnbbd"]
+atlas = ExtResource("2_jehav")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ucf"]
 atlas = ExtResource("2_jehav")
 region = Rect2(352, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xi7qx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlrm3"]
+atlas = ExtResource("2_jehav")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk43g"]
+atlas = ExtResource("2_jehav")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0w7"]
+atlas = ExtResource("2_jehav")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yie2"]
 atlas = ExtResource("2_jehav")
 region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xs8me"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0eg2"]
 atlas = ExtResource("2_jehav")
 region = Rect2(128, 32, 32, 32)
 
@@ -26,20 +54,41 @@ region = Rect2(128, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ujlis")
+"texture": SubResource("AtlasTexture_bd0qp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xdelw")
+"texture": SubResource("AtlasTexture_ssy30")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xi7qx")
+"texture": SubResource("AtlasTexture_5tpyq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xs8me")
+"texture": SubResource("AtlasTexture_c81ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnbbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2ucf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlrm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk43g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yie2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0eg2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 0.0
+"speed": 1.0
 }]
 
 [node name="Draggable" type="Area2D"]
@@ -48,6 +97,7 @@ collision_mask = 4
 script = ExtResource("1_fe0qn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_frk8c")
 
 [node name="Label" type="Label" parent="."]
@@ -61,6 +111,7 @@ text = "group: 01"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.875, 3.875)
 sprite_frames = SubResource("SpriteFrames_syd2q")
-frame_progress = 0.0894614
+frame = 3
+frame_progress = 0.282759
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

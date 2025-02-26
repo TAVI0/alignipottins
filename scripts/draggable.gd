@@ -6,7 +6,6 @@ const DRAGGIN_SPEED = 50
 var initial_position := Vector2.ZERO
 var initial_scale := Vector2.ZERO
 var is_dragging = false
-var texture: Texture
 
 signal dropped(draggable: Draggable, area: Area2D)
 
@@ -19,9 +18,6 @@ signal dropped(draggable: Draggable, area: Area2D)
 
 func _ready() -> void:
 	$AnimatedSprite2D.set_frame_and_progress(group,0)
-	if texture:
-		sprite.texture = texture
-	#initial_position = position
 	initial_scale = scale
 	self.connect("dropped", _on_successfully_dropped)
 	$Label.set_text("group: "+ str(group))
