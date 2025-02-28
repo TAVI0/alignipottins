@@ -36,6 +36,9 @@ func find_a_place(decoration):
 		await move_to_marker(decoration, empty_marker)
 		var content_marker=empty_marker.get_child(0)
 		decoration.reparent(content_marker)
+	else:
+		decoration.return_to_position()
+		print("mmmh rari")
 
 func move_to_marker(node: Node2D, marker: Marker2D):
 	var tween = get_tree().create_tween().tween_property(

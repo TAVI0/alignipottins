@@ -63,14 +63,14 @@ position = Vector2(48.461, 2.93217e-06)
 position = Vector2(-49.249, 2.98023e-07)
 
 [node name="Shelves2" type="Area2D" parent="shelf"]
-position = Vector2(0.821153, 60.662)
+position = Vector2(0.821144, 108.916)
 scale = Vector2(0.910721, 0.968849)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("2_qku1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves2"]
-position = Vector2(1.3008e-05, 52.1771)
+position = Vector2(-7.62939e-06, 2.13942)
 shape = SubResource("RectangleShape2D_ve4tk")
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves2"]
@@ -145,14 +145,14 @@ position = Vector2(48.461, 2.93217e-06)
 position = Vector2(-49.249, 2.98023e-07)
 
 [node name="Shelves4" type="Area2D" parent="shelf"]
-position = Vector2(0.821153, 159.008)
+position = Vector2(0.821153, 209.56)
 scale = Vector2(0.910721, 0.968849)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("2_qku1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/Shelves4"]
-position = Vector2(-7.62939e-06, 54.3165)
+position = Vector2(-7.62939e-06, 2.13942)
 shape = SubResource("RectangleShape2D_ve4tk")
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves4"]
