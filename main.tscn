@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4boffmx620kv"]
+[gd_scene load_steps=5 format=3 uid="uid://c4boffmx620kv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2l7e7"]
 [ext_resource type="Texture2D" uid="uid://ciryt76f5xjy0" path="res://sprites/shelf.png" id="1_aomma"]
-[ext_resource type="PackedScene" uid="uid://bs5dswkn0sv0m" path="res://draggable.tscn" id="1_g2yej"]
 [ext_resource type="Script" path="res://scripts/shelves.gd" id="2_qku1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve4tk"]
@@ -33,7 +32,7 @@ position = Vector2(-7.62939e-06, 2.13942)
 shape = SubResource("RectangleShape2D_ve4tk")
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves"]
-position = Vector2(4.76837e-07, 6.16639)
+position = Vector2(1.42351e-05, -2.37164)
 
 [node name="Marker2D" type="Marker2D" parent="shelf/Shelves/Markers"]
 position = Vector2(49.1537, -0.0792703)
@@ -74,7 +73,7 @@ position = Vector2(-7.62939e-06, 2.13942)
 shape = SubResource("RectangleShape2D_ve4tk")
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves2"]
-position = Vector2(4.76837e-07, 6.16639)
+position = Vector2(4.76837e-07, 0.948692)
 
 [node name="Marker2D" type="Marker2D" parent="shelf/Shelves2/Markers"]
 position = Vector2(49.1537, -0.0792703)
@@ -115,7 +114,7 @@ position = Vector2(-7.62939e-06, 2.13942)
 shape = SubResource("RectangleShape2D_ve4tk")
 
 [node name="Markers" type="Node2D" parent="shelf/Shelves3"]
-position = Vector2(4.76837e-07, 6.16639)
+position = Vector2(4.76837e-07, 2.84603)
 
 [node name="Marker2D" type="Marker2D" parent="shelf/Shelves3/Markers"]
 position = Vector2(49.1537, -0.0792703)
@@ -165,7 +164,7 @@ position = Vector2(49.1537, -0.0792703)
 position = Vector2(-49.249, 2.98023e-07)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D"]
-position = Vector2(-49.249, 2.98023e-07)
+position = Vector2(-0.133458, 0.0790371)
 
 [node name="Marker2D2" type="Marker2D" parent="shelf/Shelves4/Markers"]
 position = Vector2(-0.0952981, -0.0792691)
@@ -174,7 +173,7 @@ position = Vector2(-0.0952981, -0.0792691)
 position = Vector2(-2.14577e-06, 3.15905e-06)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D2"]
-position = Vector2(-49.249, 2.98023e-07)
+position = Vector2(-0.133458, 0.0790371)
 
 [node name="Marker2D3" type="Marker2D" parent="shelf/Shelves4/Markers"]
 position = Vector2(-48.5563, -0.079271)
@@ -183,44 +182,23 @@ position = Vector2(-48.5563, -0.079271)
 position = Vector2(48.461, 2.93217e-06)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D3"]
-position = Vector2(-49.249, 2.98023e-07)
+position = Vector2(-0.133458, 0.0790371)
 
-[node name="Potion" type="Node2D" parent="."]
-position = Vector2(578, 254)
-scale = Vector2(0.745008, 0.745008)
+[node name="time" type="Node" parent="."]
 
-[node name="Draggable" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(228.185, 253.689)
-group = 1
+[node name="number" type="Label" parent="time"]
+offset_left = 694.0
+offset_top = 22.0
+offset_right = 750.0
+offset_bottom = 45.0
+text = "00000"
 
-[node name="Draggable2" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(229.528, 93.3093)
-group = 1
-
-[node name="Draggable3" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(228.185, -61.7443)
-group = 1
-
-[node name="Draggable4" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(339.594, 91.2742)
-group = 2
-
-[node name="Draggable5" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(340.936, -57.7175)
-group = 2
-
-[node name="Draggable6" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(335.567, 255.031)
-group = 2
-
-[node name="Draggable7" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(119.462, -61.7443)
-
-[node name="Draggable8" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(126.173, 89.9319)
-
-[node name="Draggable9" parent="Potion" instance=ExtResource("1_g2yej")]
-position = Vector2(123.489, 251.004)
+[node name="text" type="Label" parent="time"]
+offset_left = 651.0
+offset_top = 22.0
+offset_right = 707.0
+offset_bottom = 45.0
+text = "TIME:"
 
 [node name="score" type="Node" parent="."]
 
@@ -237,3 +215,7 @@ offset_top = 22.0
 offset_right = 575.0
 offset_bottom = 45.0
 text = "SCORE:"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 100.0
+autostart = true

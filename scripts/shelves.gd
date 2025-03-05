@@ -2,8 +2,10 @@ extends DropZone
 
 var LONGSET = 3
 @onready var markers = $Markers
+const DRAGGABLE = preload("res://draggable.tscn")
 
 func _ready() -> void:
+	add_potion()
 	pass
 	
 func _process(delta: float) -> void:
@@ -38,7 +40,6 @@ func find_a_place(decoration):
 		decoration.reparent(content_marker)
 	else:
 		decoration.return_to_position()
-		print("mmmh rari")
 
 func move_to_marker(node: Node2D, marker: Marker2D):
 	var tween = get_tree().create_tween().tween_property(
@@ -56,4 +57,14 @@ func get_empty_marker():
 
 func add_score():
 	GLOBAL.SCORE += 100
-	print(GLOBAL.SCORE)
+
+func add_potion():
+	for marker in markers.get_children():
+		print("POTS: ",GLOBAL.POTS)
+		if GLOBAL.POTS != 0:
+			var decoration: Draggable = DRAGGABLE.instantiate()
+			decoration.group = 1
+			marker.add_child(decoration)
+			GLOBAL.POTS -= 1
+			pass
+	pass
