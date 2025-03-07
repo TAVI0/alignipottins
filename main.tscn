@@ -38,7 +38,6 @@ position = Vector2(1.42351e-05, -2.37164)
 position = Vector2(49.1537, -0.0792703)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D"]
-position = Vector2(-49.249, 2.98023e-07)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves/Markers/Marker2D"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -56,7 +55,6 @@ position = Vector2(-49.249, 2.98023e-07)
 position = Vector2(-48.5563, -0.079271)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves/Markers/Marker2D3"]
-position = Vector2(48.461, 2.93217e-06)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves/Markers/Marker2D3"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -79,7 +77,6 @@ position = Vector2(4.76837e-07, 0.948692)
 position = Vector2(49.1537, -0.0792703)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D"]
-position = Vector2(-49.249, 2.98023e-07)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -97,7 +94,6 @@ position = Vector2(-49.249, 2.98023e-07)
 position = Vector2(-48.5563, -0.079271)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D3"]
-position = Vector2(48.461, 2.93217e-06)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves2/Markers/Marker2D3"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -120,7 +116,6 @@ position = Vector2(4.76837e-07, 2.84603)
 position = Vector2(49.1537, -0.0792703)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves3/Markers/Marker2D"]
-position = Vector2(-49.249, 2.98023e-07)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves3/Markers/Marker2D"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -138,7 +133,6 @@ position = Vector2(-49.249, 2.98023e-07)
 position = Vector2(-48.5563, -0.079271)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves3/Markers/Marker2D3"]
-position = Vector2(48.461, 2.93217e-06)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves3/Markers/Marker2D3"]
 position = Vector2(-49.249, 2.98023e-07)
@@ -161,7 +155,6 @@ position = Vector2(4.76837e-07, 6.16639)
 position = Vector2(49.1537, -0.0792703)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D"]
-position = Vector2(-49.249, 2.98023e-07)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D"]
 position = Vector2(-0.133458, 0.0790371)
@@ -179,7 +172,7 @@ position = Vector2(-0.133458, 0.0790371)
 position = Vector2(-48.5563, -0.079271)
 
 [node name="ContentMarker" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D3"]
-position = Vector2(48.461, 2.93217e-06)
+position = Vector2(-0.133455, 0.0790369)
 
 [node name="BackContent" type="Node2D" parent="shelf/Shelves4/Markers/Marker2D3"]
 position = Vector2(-0.133458, 0.0790371)

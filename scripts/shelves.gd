@@ -6,6 +6,7 @@ const DRAGGABLE = preload("res://draggable.tscn")
 
 func _ready() -> void:
 	add_potion()
+	checkSet()
 	pass
 	
 func _process(delta: float) -> void:
@@ -60,11 +61,13 @@ func add_score():
 
 func add_potion():
 	for marker in markers.get_children():
-		print("POTS: ",GLOBAL.POTS)
-		if GLOBAL.POTS != 0:
+		if GLOBAL.POTS != null:
 			var decoration: Draggable = DRAGGABLE.instantiate()
-			decoration.group = 1
-			marker.add_child(decoration)
-			GLOBAL.POTS -= 1
+			decoration.group =  GLOBAL.POTS[0]
+			GLOBAL.POTS.erase(decoration.group)
+			if decoration.group == 3:
+				decoration.queue_free()
+			else:
+				marker.get_child(0).add_child(decoration)
 			pass
 	pass
